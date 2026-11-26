@@ -38,6 +38,23 @@ bitis[i] = donus[i] = bekleme[i] = tamamlandi[i] = 0;
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //***************
 //*Ana Fonksiyon*
 //***************

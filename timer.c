@@ -5,8 +5,8 @@
 #define MAX 100
 
 //global değişkenler
-int baglam_degisimi = 0;
-int son_surec = -1;
+int baglamDegisimi = 0;
+int sonSurec = -1;
 
 //***********************
 //*Yardımcı fonksiyonlar*
@@ -37,7 +37,54 @@ bitis[i] = donus[i] = bekleme[i] = tamamlandi[i] = 0;
 }
 
 
+//gantt blogunu yazdirma fonksiyonu
+void ganttPrintEyle(int surecId, int baslangic, int bitis, int sifirla)
+{
+static int blokSayaci = 0;
 
+//sifirlama
+    if(sifirla == 1)
+{
+    blokSayaci = 0;
+    return;
+}
+
+
+//baglam? kontrolu
+    if (surecId != -1 )
+    {
+        
+        if(sonSurec != surecId && sonSurec != -1) 
+        {
+            baglamDegisimi++;
+            
+        }
+        
+sonSurec = surecId;
+}
+
+
+
+
+
+//print ve 6 blok max
+    if (surecId == -1)
+{
+    printf("[BOS %d-%d] ", baslangic, bitis);
+}
+    else
+    {
+    printf("[P%d %d-%d] ", surecId, baslangic, bitis);
+    }
+
+
+blokSayaci++;
+    if (blokSayaci % 6 == 0)
+{
+    printf("\n");
+}
+
+}
 
 
 

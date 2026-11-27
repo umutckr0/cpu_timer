@@ -121,6 +121,21 @@ printf("Baglam Degisimi: %d\n", baglamDegisimi);
 
 
 
+void fcfs(int n, int orjinalNo[], int orjinalGelis[], int orjinalCpu[] )
+{
+int no[MAX], gelis[MAX], cpu[MAX], bitis[MAX], donus[MAX], bekleme[MAX], tamamlandi[MAX], kalanSure[MAX], i, j, temp, zaman = 0;
+
+//kopyala
+veriKopyala(n, orjinalNo, orjinalGelis, orjinalCpu, no, gelis, cpu, bitis, donus, bekleme, tamamlandi, kalanSure);
+//sayaclari sifirla
+baglamDegisimi = 0;
+sonSurec = -1;
+ganttPrintEyle(0, 0, 0, 1);
+
+}
+
+
+
 
 
 

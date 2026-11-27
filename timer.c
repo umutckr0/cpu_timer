@@ -20,10 +20,10 @@ int i;
 
 for (i = 0; i < n; i++)
     {
-//roundrobin
+//roundrobin için hazırlık
 kalanSure[i] = orjinalCpu[i];
 
-//rr saklama
+//rr gereklileri saklama
 no[i] = orjinalNo[i];
 gelis[i] = orjinalGelis[i];
 cpu[i] = orjinalCpu[i];
@@ -86,7 +86,38 @@ blokSayaci++;
 
 }
 
+//ortalama değer hesaplama fonksiyonu
+void ortalamalar(int donus[MAX], int bekleme[MAX], int n, float *ortalamaBekleme, float *ortalamaDonus)
+{
+int i;
+float toplamBekleme = 0;
+float toplamDonus = 0;
 
+for (i=0; i < n; i++){
+    toplamBekleme = toplamBekleme + bekleme[i];
+    toplamDonus = toplamDonus + donus[i];
+}
+
+*ortalamaBekleme = toplamBekleme / n;
+*ortalamaDonus = toplamDonus / n;
+
+
+}
+
+//tablolari yazdirma fonksiyonu
+void tabloYazdir (int n, int no[], int gelis[], int cpu[],int bitis[], int donus[], int bekleme[], float ortalamaBekleme, float ortalamaDonus)
+{
+int i;
+puts(" Surec | Gelis |  CPU  | Bitis | Donus |Bekleme");
+for (i = 0; i < n; i++){
+    printf("  P%-2d  |  %3d  |  %3d  |  %3d  |  %3d  |  %3d\n", no[i], gelis[i], cpu[i], bitis[i], donus[i], bekleme[i]);
+}
+
+printf("Ortalama Bekleme: %.2f\n", ortalamaBekleme);
+printf("Ortalama Donus: %.2f\n", ortalamaDonus);
+printf("Baglam Degisimi: %d\n", baglamDegisimi);
+
+}
 
 
 
